@@ -72,11 +72,8 @@ public class AddProductActivity extends AppCompatActivity {
         this.relativeLayoutSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (AddProductActivity.this.path == null
-                ) {
+                if (AddProductActivity.this.path == null && AddProductActivity.this.barcode == null) {
                     Toast.makeText(AddProductActivity.this.getApplicationContext(), R.string.please_take_picture, Toast.LENGTH_SHORT).show();
-                } else if (AddProductActivity.this.barcode == null) {
-                    Toast.makeText(AddProductActivity.this.getApplicationContext(), R.string.please_scan_barcode, Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent();
                     intent.putExtra(Constant.IMAGE_PATH_VALUE, AddProductActivity.this.path);
